@@ -23,4 +23,5 @@ public class Beakjoon_1546 {
 		}
 		System.out.println(sum/max*100/N);
 	}
+
 }
