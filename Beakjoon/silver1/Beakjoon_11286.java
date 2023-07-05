@@ -1,7 +1,7 @@
 package silver1;
 /*
 알고리즘 코딩테스트 자바 3장
-백준 2164
+백준 11286
 날짜 2023.07.05
 */
 import java.io.*;
@@ -11,7 +11,7 @@ public class Beakjoon_11286 {
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
 		int N=sc.nextInt();
-		PriorityQueue<Integer> pq=new PriorityQueue<>((o1,o2)->{
+		PriorityQueue<Integer> pq=new PriorityQueue<>((o1,o2)->{//우선순위 큐 정렬 방법 지정.
 			int first_abs=Math.abs(o1);
 			int second_abs=Math.abs(o2);
 			if(first_abs==second_abs)
