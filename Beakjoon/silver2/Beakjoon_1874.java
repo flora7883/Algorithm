@@ -38,7 +38,7 @@ public class Beakjoon_1874 {
 				}
 				else {
 					result=false;
-					System.out.println("No");
+					System.out.println("NO");
 					break;
 				}
 			}
