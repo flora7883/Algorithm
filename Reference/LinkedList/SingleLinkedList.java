@@ -1,7 +1,7 @@
 package LinkedList;
 
 /*
-Single Linked List 기본 틀
+Single Linked List
 날짜 2023.08.16
 */
 import java.util.*;
@@ -24,7 +24,7 @@ public class SingleLinkedList {
 	int node_count=0;
 	SingleNode head;
 	
-	SingleNode getNode(int data) {
+	SingleNode newNode(int data) {
 		poll[node_count]=new SingleNode(data);
 		return poll[node_count++];
 	}
@@ -34,13 +34,13 @@ public class SingleLinkedList {
 	}
 	
 	void insertFront(int data) {
-		SingleNode node=getNode(data);
+		SingleNode node=newNode(data);
 		node.next=head.next;
 		head.next=node;
 	}
 	
 	void insertLast(int data) {
-		SingleNode node=getNode(data);
+		SingleNode node=newNode(data);
 		SingleNode pre_node=head;
 		while(pre_node.next!=null) {
 			pre_node=pre_node.next;
