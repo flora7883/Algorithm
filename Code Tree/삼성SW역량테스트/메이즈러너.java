@@ -57,23 +57,14 @@ public class 메이즈러너 {
 	}
 	static void simulation() {
 		for(int i=0;i<K;i++) {
-			System.out.printf("K: %d\n",i);
 			for(Iterator<Node> iterator = player.iterator(); iterator.hasNext();) {
 				Node p= iterator.next();
-				System.out.printf("move %d,%d -> ",p.r,p.c);
 				move(p,iterator);
-				System.out.println();			
 				}
 			if(count==0) {//다 탈출함
 				break;
 			}
 			rotation();
-			for(int j=1;j<=N;j++) {
-				for(int k=1;k<=N;k++) {
-					System.out.printf("%d ",map[j][k]);
-				}
-				System.out.println();
-			}
 		}
 		System.out.println(dis);
 		System.out.printf("%d %d\n", exit.r, exit.c);
@@ -96,7 +87,6 @@ public class 메이즈러너 {
 				}
 			}
 		}
-		System.out.printf("%d,%d\n",p.r,p.c);
 	}
 	
 	static boolean fast(int r1, int c1, int r2, int c2) {
@@ -113,45 +103,8 @@ public class 메이즈러너 {
 	}
 	
 	static void rotation() {//90도 돌림.
-		System.out.println("rotation");
 		
-		/*Node p=find();
-		System.out.printf("p: %d, %d\n",p.r,p.c);
-		System.out.printf("exit: %d, %d\n",exit.r,exit.c);
-		//가장 작은 정사각형 찾기
-		int length=Math.max(Math.abs(exit.r-p.r),Math.abs(exit.c-p.c))+1;
-		int current_r=Math.abs(exit.r-p.r)+1;
-		int current_c=Math.abs(exit.c-p.c)+1;
-		int min_r=Math.min(exit.r,p.r);
-		int max_r=Math.max(exit.r, p.r);
-		int min_c=Math.min(exit.c, p.c);
-		int max_c=Math.max(exit.c, p.c);
-		Node start=new Node(min_r,min_c);
-		Node end=new Node(max_r, max_c);
-		System.out.printf("length: %d\n",length);
-		System.out.printf("current_r: %d, current_c: %d\n",current_r, current_c);
-		System.out.printf("min_r: %d, ,max_r: %d, min_c: %d, max_c: %d\n",min_r,max_r, min_c, max_c);
-		if(current_r<length) {//확장 필요
-			if(length-current_r<=min_r-1) {//위로 가는거로 충분
-				start.r=min_r-(length-current_r);
-			}
-			else {
-				end.r=max_r+(length-current_r)-(min_r-1);
-				start.r=1;
-			}
-		}
-
-		if(current_c<length) {
-			if(length-current_c<=min_c-1) {//왼쪽으로 가는거로 충분
-				start.c=min_c-(length-current_c);
-			}
-			else {
-				end.c=max_c+(length-current_c)-(min_c-1);
-				start.c=1;
-			}
-		}*/
 		square();
-		System.out.printf("start: %d, %d \nend: %d, %d\n",start.r,start.c,end.r,end.c);
 		//map update, player update
 		//복사본 만들기
 		int[][] copy=new int[length][length];
@@ -168,7 +121,6 @@ public class 메이즈러너 {
 		
 		for(int i=0;i<length;i++) {
 			for(int j=0;j<length;j++) {
-				System.out.printf("%d,%d -> %d,%d\n",start.r+i, start.c+j,start.r+j, end.c-i);
 				map[start.r+j][end.c-i]=copy[i][j];
 				if(copy[i][j]==-1) {
 					exit.r=start.r+j;
@@ -176,15 +128,12 @@ public class 메이즈러너 {
 				}
 			}
 		}
-		System.out.println("player");
 		for(Node n:player) {
 			if(start.r<=n.r && n.r<=end.r && start.c<=n.c && n.c<=end.c) {
-				System.out.printf("%d, %d ->",n.r,n.c);
 				int r=n.r;
 				int c=n.c;
 				n.r=start.r+c-start.c;
 				n.c=end.c-r+start.r;
-				System.out.printf(" %d,%d\n",n.r,n.c);
 			}
 		}
 	}
