@@ -23,7 +23,7 @@ public class SWEA_7701 {
 				set.add(s);
 			}
 			ArrayList<String> list=new ArrayList<>(set);
-			list.sort((o1,o2)->{
+			Collections.sort(list,(o1,o2)->{
 				int result=o1.length()-o2.length();
 				if(result==0) {//길이가 같은 경우
 					if(o1.compareTo(o2)<0) {//o1이 o2보다 우선순위 높음. 
@@ -35,7 +35,6 @@ public class SWEA_7701 {
 				}
 				return result;
 			});
-			Collections.sort(list);
 			bw.write("#"+String.valueOf(test_case)+"\n");
 			for(String s:list) {
 				bw.write(s+"\n");
