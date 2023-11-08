@@ -5,13 +5,13 @@ import java.util.Collections;
 
 public class Binary_search {
 	public static void main(String[] args) {
-		int N;
+		int N=0;
 		ArrayList<Integer> list=new ArrayList<>();
 		for(int i=0;i<N;i++) {
 			list.add(0);
 		}
 		Collections.sort(list);
-		int M;
+		int M=0;
 		for(int i=0;i<M;i++) {
 			int x=0;
 			int start=0;
@@ -35,6 +35,5 @@ public class Binary_search {
 			else
 				System.out.println("0");
 		}
-	}
 	}
 }
