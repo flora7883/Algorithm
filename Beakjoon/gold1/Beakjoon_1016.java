@@ -15,7 +15,6 @@ public class Beakjoon_1016 {
 		long max=sc.nextLong();
 		
 		boolean check[]=new boolean[(int) ((max-min)+1)];//0=min~ max 까지
-		
 		for(long i=2; i*i<=max;i++) {
 			long pow=i*i;
 			long start=min/pow;
