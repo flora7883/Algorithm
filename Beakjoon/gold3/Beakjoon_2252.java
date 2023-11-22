@@ -2,7 +2,7 @@ package gold3;
 /*
 알고리즘 코딩테스트 자바 8장
 백준 2252
-날짜 2023.11.21
+날짜 2023.11.20
 */
 import java.util.*;
 import java.io.*;
