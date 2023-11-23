@@ -7,10 +7,10 @@ package platinum5;
 import java.io.*;
 import java.util.*;
 
-class Node{
+class Beakjoon_11003_Node{
 	int index;
 	int data;
-	Node(int index, int data){
+	Beakjoon_11003_Node(int index, int data){
 		this.index=index;
 		this.data=data;
 	}
@@ -27,7 +27,7 @@ public class Beakjoon_11003 {
 		int L=Integer.parseInt(st.nextToken());
 		st=new StringTokenizer(br.readLine());
 		
-		Deque<Node> dq=new LinkedList<>();
+		Deque<Beakjoon_11003_Node> dq=new LinkedList<>();
 		
 		//Node new_node=new Node(1,Integer.parseInt(st.nextToken()));
 		//dq.addLast(new_node);
@@ -36,7 +36,7 @@ public class Beakjoon_11003 {
 		//bw.write(dq.getFirst().data+"");
 		
 		for(int i=1;i<=N;i++) {
-			Node node=new Node(i,Integer.parseInt(st.nextToken()));
+			Beakjoon_11003_Node node=new Beakjoon_11003_Node(i,Integer.parseInt(st.nextToken()));
 			int real=i-L+1;
 
 			while(!dq.isEmpty()) {
