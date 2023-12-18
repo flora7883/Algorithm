@@ -36,9 +36,7 @@ public class Dijkstra {
 			int w = 0;
 			graph.get(s).add(new Dijkstra_Node(e, w));
 		}
-	}
 
-	static void dijkstra() {
 		// 다익스트라 실행
 		for (int i = 1; i <= N; i++) {// 거리는 inf로 초기화. 갈 수 없음을 의미
 			distance[i] = INF;
