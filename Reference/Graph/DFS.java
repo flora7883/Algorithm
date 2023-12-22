@@ -31,6 +31,15 @@ public class DFS {
         return;
 	}
 	
+	static void dfs3(int now) {
+		for(int next:list.get(now)) {
+			if(!visited[next]) {
+				visited[next]=true;
+				dfs3(next);
+			}
+		}
+	}
+	
 	public static void main(String[] args) {
 		Pair[] edges= {new Pair(0,1),new Pair(0,2),new Pair(0,3),new Pair(1,2),new Pair(1,4),new Pair(3,2),new Pair(4,3)};
 		
